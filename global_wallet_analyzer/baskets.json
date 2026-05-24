@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "XTB_Euro",
+    "amount": 0,
+    "currency": {
+      "eur": 1342
+    }
+  },
+  {
+    "id": 2,
+    "name": "XTB_Ike",
+    "amount": 0,
+    "currency": {
+      "pln": 1393
+    }
+  },
+  {
+    "id": 3,
+    "name": "Crypto",
+    "amount": 0,
+    "currency": {
+      "btc": 0,
+      "eth": 0,
+      "usdt": 500,
+      "usdc": 560
+    }
+  },
+  {
+    "id": 4,
+    "name": "Cash",
+    "amount": 0,
+    "currency": {
+      "pln": 250,
+      "eur": 550
+    }
+  }
+]
