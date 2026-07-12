@@ -1,5 +1,5 @@
 import datetime
-from tokenize import group
+
 
 
 class Child:
@@ -29,6 +29,11 @@ class Group:
         self.children = []
 
     def add_child(self, child: Child):
+        """
+        Function return groups limit
+        :param child: number of children
+        :return: in or out of limit
+        """
         if len(self.children) == self.limit:
             return False
         else:
