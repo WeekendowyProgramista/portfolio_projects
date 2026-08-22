@@ -14,7 +14,9 @@ kindergarten.add_groups(group_2_6_v1)
 kindergarten.add_groups(group_2_6_v2)
 kindergarten.add_groups(group_3_6)
 
-for child in imported_children:
+sorted_children = sorted(imported_children, key=lambda c:(c.age, c.gender))
+
+for child in sorted_children:
     kindergarten.assign_child_to_group(child)
 
-
+print(kindergarten)
