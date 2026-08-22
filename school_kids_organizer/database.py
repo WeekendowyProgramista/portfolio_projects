@@ -16,7 +16,7 @@ def fake_db():
             'last_name': fake.last_name(),
             'gender': random.choice(gender),
             'address': fake.address(),
-            'age': random.randint(1,6)
+            'age': random.randint(0,6)
         }
         kinder_list.append(child)
 

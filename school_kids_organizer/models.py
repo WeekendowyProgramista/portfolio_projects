@@ -70,23 +70,9 @@ class Kindergarten:
         self.all_children.append(child)
 
     def assign_child_to_group(self, child):
+        matching_groups = []
+
         for group in self.all_groups:
-            if group.min_age <= child.age <= group.max_age and len(group.children) < group.limit:
-                group.add_child(child)
-                break
+            if group.min_age <= child.age < group.max_age and len(group.children) < group.limit:
+                matching_groups.append(group)
 
-
-# child_1 = Child('Daniel','Żebrowski', 'Witosa 10', 'Male', 1)
-# child_2 = Child('Adrianna','Wilczewska', 'Władysława 4', 'Female', 4)
-#
-# group_0_3 = Group(group_name='smoczki',min_age= 0, max_age= 3, limit= 12)
-# group_3_6 = Group(group_name='patyczki',min_age= 3, max_age= 6, limit= 22)
-#
-# group_0_3.add_child(child=child_1)
-# group_3_6.add_child(child=child_2)
-#
-# kindergarten = Kindergarten()
-# kindergarten.add_groups(group=group_3_6)
-# kindergarten.add_groups(group=group_0_3)
-# kindergarten.add_children(child=child_1)
-# kindergarten.add_children(child=child_2)
