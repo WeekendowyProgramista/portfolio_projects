@@ -34,4 +34,16 @@ with open('fakedb.csv', 'w', newline='') as csv_file:
 
 
 def load_children_from_csv():
-
+    with open('fakedb.csv', 'r', newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        children_list = []
+        for row in reader:
+            child = Child(
+                first_name=row['first_name'],
+                last_name=row['last_name'],
+                gender=row['gender'],
+                address=row['address'],
+                age=int(row['age'])
+            )
+            children_list.append(child)
+    return children_list
