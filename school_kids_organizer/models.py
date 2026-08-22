@@ -13,6 +13,9 @@ class Child:
     def __str__(self):
         return f'{self.first_name}, {self.last_name}, {self.address}, {self.gender}, {self.age}'
 
+    __repr__ = __str__
+
+
 class Group:
     """
     stores group data and manages capacity limits
@@ -65,6 +68,12 @@ class Kindergarten:
 
     def add_children(self, child: Child):
         self.all_children.append(child)
+
+    def assign_child_to_group(self, child):
+        for group in self.all_groups:
+            if group.min_age <= child.age <= group.max_age and len(group.children) < group.limit:
+                group.add_child(child)
+                break
 
 
 # child_1 = Child('Daniel','Żebrowski', 'Witosa 10', 'Male', 1)
