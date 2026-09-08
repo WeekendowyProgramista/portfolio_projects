@@ -1,0 +1,18 @@
+﻿services:
+  postgres-kindergarten:
+    image: postgres:16-alpine
+    container_name: postgres_kindergarten
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: kindergarten_db
+      POSTGRES_USER: kindergarten_admin
+      POSTGRES_PASSWORD: polonez12
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_kindergarten_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_kindergarten_data:

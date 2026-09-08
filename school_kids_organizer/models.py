@@ -3,12 +3,12 @@ class Child:
     """
     stores a child's data
     """
-    def __init__(self, first_name: str, last_name: str, address: str, gender: str, age: int):
+    def __init__(self, first_name: str, last_name: str, address: str, gender: str, birth_date: int):
         self.first_name = first_name
         self.last_name = last_name
         self.gender = gender
         self.address = address
-        self.age = age
+        self.birth_date = birth_date
 
     def __str__(self):
         return f'{self.first_name}, {self.last_name}, {self.address}, {self.gender}, {self.age}'
