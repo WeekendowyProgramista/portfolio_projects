@@ -32,9 +32,7 @@ class Group:
 
     def add_child(self, child: Child):
         """
-        Function return group limit True/False
-        :param child: number of children
-        :return: in or out of limit
+        Adds a child to the group's roster if space is available.
         """
         if len(self.children) == self.limit:
             return False
@@ -64,15 +62,32 @@ class Kindergarten:
         return f'{children_final}\n{groups_final}'
 
     def add_groups(self, group: Group):
+        """
+        Adds a group instance to the kindergarten's internal list of groups.
+        """
         self.all_groups.append(group)
 
     def add_children(self, child: Child):
+        """
+        Adds a child instance to the kindergarten's master list of registered children.
+        """
         self.all_children.append(child)
 
     def assign_child_to_group(self, child):
+        """
+        Assigns a child to the least populated matching group that satisfies age and capacity limits.
+        """
         matching_groups = []
 
         for group in self.all_groups:
             if group.min_age <= child.age < group.max_age and len(group.children) < group.limit:
                 matching_groups.append(group)
+        if not matching_groups:
+            return False
+
+        best_group = min(matching_groups, key=lambda g: len(g.children))
+        best_group.children.append(child)
+        return True
+
+
 
