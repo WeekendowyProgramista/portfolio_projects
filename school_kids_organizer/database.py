@@ -7,6 +7,9 @@ fake = Faker()
 
 
 def fake_db():
+    """
+    Generates a dataset of mock child profiles with randomized demographic data.
+    """
     gender = 'male', 'female'
     kinder_list = []
 
@@ -24,6 +27,7 @@ def fake_db():
 
 fake_list = fake_db()
 
+# Export the mock dataset to a CSV file with standardized column headers.
 
 with open('fakedb.csv', 'w', newline='') as csv_file:
     fieldnames = ['first_name', 'last_name', 'gender', 'address', 'age']
@@ -34,6 +38,9 @@ with open('fakedb.csv', 'w', newline='') as csv_file:
 
 
 def load_children_from_csv():
+    """
+    Imports child data from 'fakedb.csv' and returns a list of Child instances.
+    """
     with open('fakedb.csv', 'r', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         children_list = []
