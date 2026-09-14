@@ -8,7 +8,7 @@
     environment:
       POSTGRES_DB: kindergarten_db
       POSTGRES_USER: kindergarten_admin
-      POSTGRES_PASSWORD: your_secure_password
+      POSTGRES_PASSWORD: polonez12
     ports:
       - "5433:5432"
     volumes:
